@@ -156,11 +156,11 @@
 				snd2.play();
 			}
 			if (years >= 10) {
-				document.getElementById('part2').style.display = 'block';
-				jsConfetti.addConfetti({ confettiNumber: 800, })
 				setTimeout(() => {
+					document.getElementById('part2').style.display = 'block';
+					jsConfetti.addConfetti({ confettiNumber: 800, })
 					snd.play();
-				}, 750)
+				}, 250)
 
 			}
 		}
