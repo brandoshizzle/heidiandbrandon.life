@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<title>🎈 Woohoo!</title>
+</head>
+
+<body>
+	<div style='background-color: #50C9CE;'>
+		<h1 style='text-align: center; padding-bottom: 100px; padding-top:100px; margin: 0' data-aos="fade-in"
+			data-aos-delay="0">Hi friends and family!</h1>
+	</div>
+
+	<div>
+		<div style="display: flex; flex-wrap: wrap; transform: translateY(-30px);" class="container">
+			<div style="text-align: center; margin: auto;" class="column" data-aos="fade-in" data-aos-delay="1000">
+				<h1>Brandon and Heidi</h1>
+				<h2>have been together for</h2>
+				<div>
+					<div id='button' onclick="buttonGrow()">1</div>
+				</div>
+				<h2>years!</h2>
+			</div>
+			<div class="column" id="mainPhotoBox" style="margin: auto;" data-aos="zoom-out" data-aos-easing="ease-in"
+				data-aos-delay="2000">
+				<div class="photoBox">
+					<img src="main.jpg" width=100% />
+				</div>
+			</div>
+		</div>
+
+		<div id="part2" style="display:none; margin-top: 70px;">
+			<div class="container">
+				<h1>Wow! We were thinking we should celebrate.</h1>
+				<h1>🎈🎈🎈</h1>
+				<h2>And guess what...</h2>
+				<br />
+				<br />
+			</div>
+
+			<div style=" width: 100%" class="table">
+				<div class="card container flexBox">
+					<div class="column">
+						<div>
+							<h2>You're invited!</h2>
+							<p>February 19, 2022</p>
+							<p>4:00 P.M. to 12:00 P.M.</p>
+							<p>Shamrock Curling Club, Edmonton</p>
+							<div style="text-align: left; padding-left: 50px;" class="list">
+								<p style="text-decoration: underline;">Schedule:</p>
+								<p><strong>3:30</strong> Arrive, curling rules</p>
+								<p>
+									<strong>4:00</strong> Funspiel (FIRST 64 PEOPLE)
+								</p>
+								<p>
+									<strong>5:30</strong> End of curling
+								</p>
+								<p>
+									<strong>6:00</strong> Time to eat
+								</p>
+								<p>
+									<strong>7:59</strong> Eating over
+								</p>
+								<p>
+									<strong>8:00</strong> Dance party
+								</p>
+							</div>
+
+						</div>
+					</div>
+					<div class="column">
+						<div class="mapouter">
+							<div class="gmap_canvas"><iframe id="gmap_canvas" width=100% height=100%
+									src="https://maps.google.com/maps?q=shamrock%20curling%20edmonton&t=&z=13&ie=UTF8&iwloc=&output=embed"
+									frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="z-index: 0;"></iframe>
+								<style>
+									.mapouter {
+										position: relative;
+										text-align: right;
+										height: 500px;
+
+									}
+								</style>
+								<style>
+									.gmap_canvas {
+										overflow: hidden;
+										background: none !important;
+										height: 500px;
+									}
+								</style>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container flexBox">
+				<div style="text-align: left; padding: 25px;" class="column">
+					<h2>Anyway, here's the details:</h2>
+					<ul>
+						<li>The first 64 people to RSVP for curling will get a spot (The club has 8 sheets)</li>
+						<li>If you don't get a curling spot, you can still come watch, or come at 5:30 when curling is done!</li>
+						<li>The meal will be chili, vegetarian chili will be available (let us know of other dietary restrictions)
+						</li>
+						<li>The event may be cancelled or altered due to COVID at any time, but we're hoping we can do it!</li>
+						<li>For the safety of all our guests, vaccinations will be mandatory to attend</li>
+						<li>Contact <a href="mailto:johnson.heidibess@gmail.com">Heidi</a> or <a
+								href="mailto:cathcart.brandon@gmail.com">Brandon</a> if you have any questions</li>
+					</ul>
+				</div>
+				<div class="column" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+					<a href="" style="width: 100%;text-decoration: none;">
+						<div class="RSVPbutton">RSVP here</div>
+					</a>
+				</div>
+			</div>
+			<div style="height: 100px"></div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init({
+			offset: 120, // offset (in px) from the original trigger point
+			duration: 800,
+		});
+		var years = 1;
+		const jsConfetti = new JSConfetti()
+
+		function buttonGrow() {
+			const el = document.getElementById('button');
+			years += 1;
+			if (years < 11) {
+				let newSize = 60 * (1 + years / 10)
+				el.style.height = newSize + 'px';
+				el.style.width = newSize + 'px';
+				el.style.lineHeight = newSize + 'px';
+				el.style.fontSize = newSize / 2 + 'px'
+				el.innerText = years;
+			}
+			if (years >= 10) {
+				document.getElementById('part2').style.display = 'block';
+				jsConfetti.addConfetti({ confettiNumber: 800, })
+			}
+		}
+	</script>
+
+
+</body>
+
+</html>
