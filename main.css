@@ -155,7 +155,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 	cursor: pointer;
 }
 
-@media screen and (max-width: 700px) {
+@media only screen and (max-device-width: 700px) {
 	body{
 		overflow-x:hidden;
 	}
