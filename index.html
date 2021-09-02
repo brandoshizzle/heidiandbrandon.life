@@ -157,7 +157,10 @@
 			if (years >= 10) {
 				document.getElementById('part2').style.display = 'block';
 				jsConfetti.addConfetti({ confettiNumber: 800, })
-				snd.play();
+				setTimeout(() => {
+					snd.play();
+				}, 750)
+
 			}
 		}
 	</script>
