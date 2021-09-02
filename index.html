@@ -104,12 +104,19 @@
 					<ul>
 						<li>The first 64 people to RSVP for curling will get a spot (The club has 8 sheets)</li>
 						<li>If you don't get a curling spot, you can still come watch, or come at 5:30 when curling is done!</li>
-						<li>The meal will be chili, vegetarian chili will be available (let us know of other dietary restrictions)
+						<li>The meal will be meat & veggie chili, let us know of any dietary restrictions
 						</li>
 						<li>The event may be cancelled or altered due to COVID at any time, but we're hoping we can do it!</li>
 						<li>For the safety of all our guests, vaccinations will be mandatory to attend</li>
 						<li>Contact <a href="mailto:johnson.heidibess@gmail.com">Heidi</a> or <a
 								href="mailto:cathcart.brandon@gmail.com">Brandon</a> if you have any questions</li>
+						<li>We don't want your gifts! But if you're in a giving mood, here's some charities we like:</li>
+						<ul>
+							<li>YESS</li>
+							<li>SACE</li>
+							<li>WIN House</li>
+							<li>Boyle Street</li>
+						</ul>
 					</ul>
 				</div>
 				<div class="column" style="flex: 1; display: flex; align-items: center; justify-content: center;">
@@ -131,6 +138,9 @@
 		var years = 1;
 		const jsConfetti = new JSConfetti()
 
+		var snd = new Audio("airhorn2.mp3");
+		var snd2 = new Audio("inflate.mp3");
+
 		function buttonGrow() {
 			const el = document.getElementById('button');
 			years += 1;
@@ -141,10 +151,16 @@
 				el.style.lineHeight = newSize + 'px';
 				el.style.fontSize = newSize / 2 + 'px'
 				el.innerText = years;
+
+			}
+			if (years < 10) {
+				snd2.currentTime = 0;
+				snd2.play();
 			}
 			if (years >= 10) {
 				document.getElementById('part2').style.display = 'block';
 				jsConfetti.addConfetti({ confettiNumber: 800, })
+				snd.play();
 			}
 		}
 	</script>
